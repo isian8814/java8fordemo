@@ -24,3 +24,5 @@ log/
 /bin/
 build
 !gradle-wrapper.jar
+.gradletasknamecache
+gradle/wrapper/gradle-wrapper.properties
