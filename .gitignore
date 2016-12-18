@@ -23,3 +23,4 @@ lib/test/
 log/
 /bin/
 build
+!gradle-wrapper.jar
