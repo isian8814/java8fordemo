@@ -1,0 +1,24 @@
+# Created by .ignore support plugin (hsz.mobi)
+java8demo/src/dist
+.project
+.classpath
+.settings
+build/
+build-eclipse
+.gradle
+*.iml
+*.ipr
+*.iws
+.idea
+/.idea/
+.idea/workspace.xml
+*.class
+out
+*.log
+.idea/
+lib/compile-only/
+lib/compile/
+lib/runtime/
+lib/test/
+log/
+/bin/
