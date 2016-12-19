@@ -21,7 +21,12 @@ public class ArrayToStream {
         Stream<Person> stream = Stream.of(people);
         stream.forEach(System.out::println);
 
+        System.out.println("-------------------------");
+
         Stream<Person> stream1 = Arrays.stream(people);
-        stream1.forEach(System.out::println);
+        stream1
+                .filter(p -> p.getAge() > 25)
+                .filter(p -> p.getAge() < 48)
+                .forEach(System.out::println);
     }
 }
