@@ -29,7 +29,7 @@ public class FilterUsePredicateInnerClass {
         Predicate<Person> perdOlder = (p) -> p.getAge() >= 65;
         Predicate<Person> predYounger = (p) -> p.getAge() <= 40;
 
-        displayPeople(people, perdOlder);
+        //displayPeople(people, perdOlder);
         displayPeople(people, predYounger);
     }
 
@@ -39,5 +39,10 @@ public class FilterUsePredicateInnerClass {
                 System.out.println(person.toString());
             }
         });
+
+        people.stream().filter(perdOlder).forEach(person -> {
+            System.out.println(person.toString());
+        });
+        System.out.println(people);
     }
 }
