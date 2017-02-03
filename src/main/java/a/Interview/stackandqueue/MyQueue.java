@@ -1,6 +1,4 @@
-package a.Interview.dataStructure;
-
-import sun.misc.Queue;
+package a.Interview.stackandqueue;
 
 import java.util.EmptyStackException;
 import java.util.NoSuchElementException;

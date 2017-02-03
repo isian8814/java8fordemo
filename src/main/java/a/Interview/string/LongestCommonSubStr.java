@@ -3,7 +3,9 @@ package a.Interview.string;
 /**
  * Created by minchanglong on 1/19/17.
  */
-public class LongestSubStr {
+public class LongestCommonSubStr {
+
+
     public static int longestSubstr(String first, String second) {
         int maxLen = 0;
         int fl = first.length();

@@ -11,6 +11,25 @@ public class InsertionSort {
             System.out.print(i);
             System.out.print(", ");
         }
+        System.out.println();
+        solution(arr1);
+        for(int i:arr1){
+            System.out.print(i);
+            System.out.print(", ");
+        }
+
+    }
+
+    static void solution(int[] input) {
+        for (int i = 1; i < input.length - 1; i++) {
+            for (int j = i; j > 0; j--) {
+                if (input[j] < input[j-1]) {
+                    int temp = input[j];
+                    input[j] = input[j-1];
+                    input[j-1] = temp;
+                }
+            }
+        }
     }
 
     public static int[] doInsertionSort(int[] input) {

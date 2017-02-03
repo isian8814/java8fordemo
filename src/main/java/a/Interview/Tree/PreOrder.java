@@ -33,6 +33,26 @@ public class PreOrder {
         System.out.println(output.substring(0, output.length() - 1));
     }
 
+    void solution(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            Node top = stack.pop();
+
+            if (top.right != null) {
+                stack.push(top.right);
+            }
+
+            if (top.left != null) {
+                stack.push(top.left);
+            }
+        }
+    }
 
     void preOrderRecursive(Node root) {
         if (root != null) {

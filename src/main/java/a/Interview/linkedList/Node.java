@@ -5,5 +5,12 @@ package a.Interview.linkedList;
  */
 class Node {
     int data;
+    int val;
     Node next;
+
+    public Node(int val) {
+        this.data = val;
+        this.val = val;
+        next = null;
+    }
 }

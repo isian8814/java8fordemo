@@ -1,4 +1,4 @@
-package a.Interview.dataStructure;
+package a.Interview.stackandqueue;
 
 import java.util.EmptyStackException;
 

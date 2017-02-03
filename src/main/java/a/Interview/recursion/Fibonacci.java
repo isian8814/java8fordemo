@@ -16,7 +16,7 @@ public class Fibonacci {
         log("\nUsing Method-1: Using Recursion. Provided Number: " + number);
         // printing Fibonacci series upto number
         for (int i = 1; i <= number; i++) {
-            log(fibonacciRecusion(i) + " ");
+            log(fibonacciRecursion(i) + " ");
         }
 
         log("\nMethod-2: Fibonacci number at location " + number + " is ==> " + (fibonacciLoop(number) + ""));
@@ -24,12 +24,12 @@ public class Fibonacci {
     }
 
     // Method-1: Java program for Fibonacci number using recursion.
-    public static int fibonacciRecusion(int number) {
+    public static int fibonacciRecursion(int number) {
         if (number == 1 || number == 2) {
             return 1;
         }
 
-        return fibonacciRecusion(number - 1) + fibonacciRecusion(number - 2); // tail recursion
+        return fibonacciRecursion(number - 1) + fibonacciRecursion(number - 2); // tail recursion
     }
 
     // Method-2: Java program for Fibonacci number using Loop.

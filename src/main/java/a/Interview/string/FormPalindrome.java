@@ -8,7 +8,7 @@ import a.Interview.recursion.Palindrome;
 public class FormPalindrome {
 
     public static void main(String[] args) {
-        char[] input = "JAVA".toCharArray();
+        char[] input = "ABAA".toCharArray();
         System.out.println(findMinInsertToFormPalindrome(input, input.length));
     }
 

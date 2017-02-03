@@ -8,8 +8,9 @@ import java.util.Stack;
  * Created by minchanglong on 1/20/17.
  */
 public class BFS_DFS {
-    public void bfs(Node rootNode)
-    {
+
+    /** iteratively BFS **/
+    public void bfs(Node rootNode) {
         // BFS_DFS uses Queue data structure
         Queue<Node> queue = new LinkedList();
         queue.add(rootNode);
@@ -28,6 +29,27 @@ public class BFS_DFS {
         clearNodes();
     }
 
+    static void bfsIterativeSolution(Node rootNode) {
+        if (rootNode != null) {
+            Queue<Node> queue = new LinkedList<>();
+            queue.offer(rootNode);
+
+            while(!queue.isEmpty()) {
+                Node node = queue.poll();
+                printNode(node);
+
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+        }
+    }
+
+    /** iteratively DFS **/
     public void dfs(Node rootNode) {
         // DFS uses Stack data structure
         Stack<Node> stack = new Stack();
@@ -41,8 +63,7 @@ public class BFS_DFS {
                 child.visited = true;
                 printNode(child);
                 stack.push(child);
-            }
-            else {
+            } else {
                 stack.pop();
             }
         }
@@ -50,12 +71,50 @@ public class BFS_DFS {
         clearNodes();
     }
 
+    static void dfsIterativeSolution(Node rootNode) {
+        if (rootNode != null) {
+            Stack<Node> stack = new Stack<>();
+            stack.push(rootNode);
+
+            while (!stack.isEmpty()) {
+                Node node = stack.pop();
+                printNode(node);
+
+                if (node.right != null) {
+                    stack.push(node.right);
+                }
+
+                if (node.left != null) {
+                    stack.push(node.left);
+                }
+            }
+        }
+    }
+
+    /** recursively DFS **/
+    public void dfsSearch(Node rootNode) {
+        if (rootNode == null) return;
+        printNode(rootNode);
+        rootNode.visited = true;
+
+        while (getUnvisitedChildNode(rootNode) != null) {
+            dfsSearch(getUnvisitedChildNode(rootNode));
+        }
+    }
+
     private Node getUnvisitedChildNode(Node node) {
+        if (node.left !=null && !node.left.visited) {
+            return node.left;
+        }
+
+        if (node.right !=null && !node.right.visited) {
+            return node.right;
+        }
+
         return null;
     }
 
-
-    private void printNode(Node rootNode) {
+    private static void printNode(Node rootNode) {
     }
 
     private void clearNodes() {

@@ -1,6 +1,7 @@
 package a.Interview.Tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -14,10 +15,10 @@ public class InOrder {
      * @return
      */
     public List<Integer> inorderTraversalLoop(Node root) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<>();
         if(root==null)
             return result;
-        Stack<Node> stack = new Stack<Node>();
+        Stack<Node> stack = new Stack<>();
         stack.push(root);
 
         while(!stack.isEmpty()){
@@ -30,6 +31,34 @@ public class InOrder {
                 stack.pop();
                 if(top.right!=null){
                     stack.push(top.right);
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public List<Integer> solution(Node root) {
+        List<Integer> result = new LinkedList<>();
+
+        if (root == null) {
+            return null;
+        }
+
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            Node node = stack.peek();
+
+            if (node.left != null) {
+                stack.push(node.left);
+                node.left = null; /** Important to set the pushed left child to null **/
+            } else {
+                result.add(node.data);
+                stack.pop();
+                if (node.right != null) {
+                    stack.push(node.right);
                 }
             }
         }

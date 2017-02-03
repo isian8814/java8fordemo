@@ -40,6 +40,33 @@ public class PostOrder {
         return res;
     }
 
+    void Solution(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            Node top = stack.peek();
+
+            if (top.right != null) {
+                stack.push(top.right);
+                top.right = null;
+            }
+
+            if (top.left != null) {
+                stack.push(top.left);
+                top.left = null;
+            }
+
+            if (top.right == null && top.left == null) {
+                stack.pop();
+            }
+        }
+    }
+
     List<Integer> res = new ArrayList<Integer>();
 
     void postOrderRecursive(Node root) {
